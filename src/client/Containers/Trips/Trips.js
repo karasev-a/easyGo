@@ -12,7 +12,8 @@ class Trips extends Component {
   }
 
   componentDidMount() {
-    fetch('/api/trips')
+    fetch('/api/trips',
+        { credentials: 'include' })
       .then(res => res.json())
       .then((res) => {
         this.setState({ data: res });
